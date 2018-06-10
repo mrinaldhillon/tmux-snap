@@ -1,0 +1,21 @@
+
+  name: tmux-latest
+  version: '2.7' # just for humans, typically '1.2+git' or '1.3.2'
+  summary: latest version of tmux
+  description: needs no introduction
+
+  grade: devel # must be 'stable' to release into candidate/stable channels
+  confinement: devmode # use 'strict' once you have the right plugs and slots
+
+  parts:
+    libevent:
+      plugin: autotools
+      source: https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+    ncurses:
+      plugin: autotools
+      source: https://github.com/ThomasDickey/ncurses-snapshots/archive/v6_1_20180609.tar.gz
+    tmux:
+      # See 'snapcraft plugins'
+      plugin: autotools
+      source: https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
+      after: [libevent, ncurses]
