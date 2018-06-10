@@ -17,8 +17,8 @@
     ncurses:
       plugin: autotools
       source: https://github.com/ThomasDickey/ncurses-snapshots/archive/v6_1_20180609.tar.gz
-      - configflags:
-      with-shared
+      configflags:
+      - --with-shared
       build-packages:
       - gcc
       - make
