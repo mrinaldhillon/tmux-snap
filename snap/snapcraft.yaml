@@ -11,11 +11,18 @@
     libevent:
       plugin: autotools
       source: https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+      - gcc
+      - make
     ncurses:
       plugin: autotools
       source: https://github.com/ThomasDickey/ncurses-snapshots/archive/v6_1_20180609.tar.gz
+      - gcc
+      - make
     tmux:
       # See 'snapcraft plugins'
       plugin: autotools
       source: https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
       after: [libevent, ncurses]
+      build-packages:
+      - gcc
+      - make
