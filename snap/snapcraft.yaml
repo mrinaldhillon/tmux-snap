@@ -11,11 +11,13 @@
     libevent:
       plugin: autotools
       source: https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+      build-packages:
       - gcc
       - make
     ncurses:
       plugin: autotools
       source: https://github.com/ThomasDickey/ncurses-snapshots/archive/v6_1_20180609.tar.gz
+      build-packages:
       - gcc
       - make
     tmux:
